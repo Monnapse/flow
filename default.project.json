@@ -1,20 +1,6 @@
 {
   "name": "InputManager",
   "tree": {
-    "$className": "DataModel",
-
-    "ReplicatedStorage": {
-      "Packages": {
-        "$path": "src"
-      }
-    },
-
-    "StarterPlayer": {
-      "StarterPlayerScripts": {
-        "Client": {
-          "$path": "Examples"
-        }
-      }
-    }
+    "$path": "src"
   }
 }
