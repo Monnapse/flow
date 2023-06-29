@@ -8,7 +8,6 @@ local thread = {}
 thread.__index = thread
 
 thread.scanner = function(signal)
-    print("PAUSED")
     coroutine.yield()
 end
 
@@ -35,7 +34,6 @@ end
 
 --// Pause the thread
 function thread:Pause()
-    print("WAITING FOR PAUSE")
     --thread.Threads[self.Thread] = false
     self.Signal:Fire()
     --self.Thread.pauser()

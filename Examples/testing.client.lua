@@ -19,8 +19,6 @@ local VerticleInfo = InputManager.Info.NewAction(
     Enum.Axis.Y -- axis
 )
 
-print(VerticleKeys,VerticleInfo)
-
 local VerticleManager = InputManager.NewManager(VerticleInfo)
 
 VerticleManager.Triggers.Began:Enable()

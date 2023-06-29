@@ -1,8 +1,6 @@
 --// Services
 local UserInputManager = game:GetService("UserInputService")
 
-print(Vector3.new(1,2,3) * -1)
-
 --// Modules
 local assert = require(script.Parent.assert)
 local invert = require(script.Parent.invert)
