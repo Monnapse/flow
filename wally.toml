@@ -6,4 +6,3 @@ registry = "https://github.com/UpliftGames/wally-index"
 realm = "shared"
 
 [dependencies]
-Signal = "monnapse/signal@0.1.0"
