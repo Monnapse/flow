@@ -5,7 +5,7 @@ registry = "test"
 [[package]]
 name = "monnapse/input-manager"
 version = "0.1.0"
-dependencies = [["Signal", "monnapse/signal@0.1.0"]]
+dependencies = [["monnapse/signal@0.1.0"]]
 
 [[package]]
 name = "monnapse/signal"
