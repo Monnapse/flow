@@ -20,7 +20,7 @@ export type Action = {
 }
 
 --[=[
-    Where the types get made
+    Where the types get made.
 
     @class info
     @client
@@ -31,12 +31,12 @@ info.__index = info
 --// Functions
 
 --[=[
-    Create a Key
+    Create a Key.
 
     @client
     @param InputType Enum.KeyCode | Enum.UserInputType -- The input type
     @param Normal number -- The number your keycode will be multiplied by, 1 or -1
-    @param Axis | nil -- Where your keycode axis will go on
+    @param Axis Enum.Axis | nil -- Where your keycode axis will go on
     @return Key
 ]=]
 function info.NewKey(
@@ -56,7 +56,7 @@ function info.NewKey(
 end
 
 --[=[
-    Create a input Action
+    Create a input Action.
 
     @client
     @param Name string -- The name of the input Action

@@ -6,7 +6,7 @@
     @class assert
     @client
     @private
-    Where all of the checking is handled
+    Where all of the checking is handled.
 ]=]
 local assert = {}
 assert.__index = assert
@@ -16,7 +16,7 @@ assert.__index = assert
     @client
     @param Value key
     @param Table keylist
-    Check if a KeyCode is in a table of keys
+    Check if a KeyCode is in a table of keys.
 ]=]
 function assert.CheckKeyAssert(Value,Table)
     for index, value in pairs(Table) do
@@ -32,7 +32,7 @@ end
     @private
     @client
     @param Table {}
-    Check if a Key Has Custom Input
+    Check if a Key Has Custom Input.
 ]=]
 function assert.CheckCustomAssert(Table)
     for index, value in pairs(Table) do

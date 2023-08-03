@@ -4,7 +4,7 @@
 --[=[
     @class manager
     @client
-    The main directories
+    The main directories.
 ]=]
 local manager = {
     Info = require(script.info),

@@ -16,7 +16,7 @@ local triggers = require(script.Parent.triggers)
     @param Manager Action -- Your action holding your data
     @within manager
 ]=]
-function newManager(Manager)
+function NewManager(Manager)
     local self = {}
 
     -- @interface Triggers
@@ -146,4 +146,4 @@ function newManager(Manager)
     return self
 end
 
-return newManager
+return NewManager

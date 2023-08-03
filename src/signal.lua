@@ -4,10 +4,10 @@
 --]]
 
 --[=[
+    Send signals over scripts easily.
     @class signal
     @client
     @private
-    Send signals over scripts easily
 ]=]
 local signal = {}
 signal.__index = signal
@@ -15,7 +15,7 @@ signal.__index = signal
 export type signal = {}
 
 --[=[
-    Create a new signal
+    Create a new signal.
 
     @client
     @private
@@ -30,7 +30,7 @@ function signal.new(): signal
 end
 
 --[=[
-    Fire an event to a signal
+    Fire an event to a signal.
 
     @client
     @private
@@ -44,7 +44,7 @@ function signal:Fire(...)
 end
 
 --[=[
-    Connect to the signal to get callbacks
+    Connect to the signal to get callbacks.
 
     @client
 
@@ -55,7 +55,7 @@ function signal:Connect(CallbackEvent)
 end
 
 --[=[
-    Destroy the signal
+    Destroy the signal.
 
     @client
     @private
@@ -65,20 +65,18 @@ function signal:Destroy()
 end
 
 --[=[
-    Enable the signal, a signal is automatically enabled so you only need to do this if you disabled the signal
+    Enable the signal
 
     @client
-    @private
 ]=]
 function signal:Enable()
     self.enabled = true
 end
 
 --[=[
-    Disable the signal
+    Disable the signal.
 
     @client
-    @private
 ]=]
 function signal:Disable()
     self.enabled = false
