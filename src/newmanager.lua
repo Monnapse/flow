@@ -8,6 +8,40 @@ local UserInputManager = game:GetService("UserInputService")
 local assert = require(script.Parent.assert)
 local invert = require(script.Parent.invert)
 local triggers = require(script.Parent.triggers)
+local signal = require(script.Parent.signal)
+
+--[=[
+    @within NewManager
+    @type Triggers {
+        Began: signal.signal,
+        Ended: signal.signal,
+        Changed: signal.signal,
+    }
+]=]
+export type Triggers = {
+    Began: signal.signal,
+    Ended: signal.signal,
+    Changed: signal.signal,
+}
+
+--[=[
+    @within NewManager
+    @type Manager {
+        Triggers: Triggers,
+        Value: boolean | number | Vector2 | Vector3
+    }
+]=]
+export type Manager = {
+    Triggers: Triggers,
+    Value: boolean | number | Vector2 | Vector3
+}
+
+--[=[
+    @class NewManager
+    @client
+]=]
+local NewManager = {}
+NewManager.__index = NewManager
 
 --[=[
     Where you action will be handled, this is the main function.
@@ -15,20 +49,14 @@ local triggers = require(script.Parent.triggers)
     @client
     @param Manager Action -- Your action holding your data
     @within manager
+    @return Manager
 ]=]
-function NewManager(Manager)
+function NewManager.Manager(Manager): Manager
     local self = {}
 
-    -- @interface Triggers
-    -- .Began Signal
-    -- .Ended Signal
-    -- .Changed Signal
     self.Triggers = {
-        -- @function Began
         Began = triggers.NewTrigger(),
-        -- @function Ended
         Ended = triggers.NewTrigger(),
-        -- @function Changed
         Changed = triggers.NewTrigger(),
     }
 
@@ -146,4 +174,4 @@ function NewManager(Manager)
     return self
 end
 
-return NewManager
+return NewManager.Manager

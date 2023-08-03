@@ -23,7 +23,7 @@ convert.__index = convert
 
     @param Table {Enum.KeyCode} -- The table of your keycodes
     @param Normal number -- The number your keycodes will be multiplied by, 1 or -1
-    @return {info.Key}
+    @return {Key}
 ]=]
 function convert.TableToKeys(Table: {Enum.KeyCode}, Normal: number, Axis: Enum.Axis | nil): {info.Key}
     local ButtonTable = {}
@@ -43,7 +43,7 @@ end
 
     @param PositiveTable {Enum.KeyCode} -- The table of your keycodes that will be positive
     @param NegativeTable {Enum.KeyCode} -- The table of your keycodes that will be negative
-    @return {info.Key}
+    @return {Key}
 ]=]
 function convert.TablesToKeys(PositiveTable: {Enum.KeyCode}, NegativeTable: {Enum.KeyCode}): {info.Key}
     local ButtonTable = {}

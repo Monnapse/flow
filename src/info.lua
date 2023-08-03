@@ -3,6 +3,16 @@
 --]]
 
 --// DataTypes
+
+--[=[
+    @within info
+    @type Key {
+        InputType: Enum.KeyCode | Enum.UserInputType, --// The Key Code
+        Normal: number, --// 1 for Positive, -1 for Negative
+        __type: string,
+        Axis: Enum.Axis | nil --//
+    }
+]=]
 export type Key = {
     InputType: Enum.KeyCode | Enum.UserInputType, --// The Key Code
     Normal: number, --// 1 for Positive, -1 for Negative
@@ -10,6 +20,17 @@ export type Key = {
     Axis: Enum.Axis | nil --//
 }
 
+--[=[
+    @within info
+    @type Action {
+        Name: string,
+        Keys: {Key},
+        Invert: boolean,
+        Type: number, --// 1 for Boolean, 2 for Number, 3 for Vector2
+        __type: string,
+        Axis: {Enum.Axis} | Enum.Axis | nil
+    }
+]=]
 export type Action = {
     Name: string,
     Keys: {Key},
