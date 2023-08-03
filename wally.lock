@@ -3,6 +3,12 @@
 registry = "test"
 
 [[package]]
+<<<<<<< HEAD
 name = "monnapse/Flow"
 version = "0.1.1"
 dependencies = []
+=======
+name = "monnapse/input-manager"
+version = "0.1.0"
+dependencies = [[]]
+>>>>>>> 984328f5e0640851f75959a056bb2324d368861b
