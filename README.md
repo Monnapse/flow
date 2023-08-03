@@ -36,5 +36,5 @@ VerticleManager.Triggers.Changed:Connect(function(Key)
 end)
 ```
 
-## Custom Conrtolers/Keys
+## Custom Inputs
 Currently being developed
