@@ -1,9 +1,23 @@
+--[[
+    Made by Monnapse
+--]]
+
+--[=[
+    @class assert
+    @client
+    @private
+    Where all of the checking is handled
+]=]
 local assert = {}
 assert.__index = assert
 
---[[
+--[=[
+    @private
+    @client
+    @param Value key
+    @param Table keylist
     Check if a KeyCode is in a table of keys
---]]
+]=]
 function assert.CheckKeyAssert(Value,Table)
     for index, value in pairs(Table) do
         if Value == value.InputType then
@@ -13,9 +27,13 @@ function assert.CheckKeyAssert(Value,Table)
 
     return false
 end
---[[
+
+--[=[
+    @private
+    @client
+    @param Table {}
     Check if a Key Has Custom Input
---]]
+]=]
 function assert.CheckCustomAssert(Table)
     for index, value in pairs(Table) do
         if value.Type:match("Custom") then
@@ -26,6 +44,13 @@ function assert.CheckCustomAssert(Table)
     return false
 end
 
+--[=[
+    @private
+    @client
+
+    @param Value Vector3
+    @param Axis {Enum.Axis} | Enum.Axis | nil
+]=]
 function assert.BuildAxis(Value: Vector3, Axis: {Enum.Axis} | Enum.Axis | nil)
     if type(Axis) == "table" and #Axis > 0 then
         local NewX = 0

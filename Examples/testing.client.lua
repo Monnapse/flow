@@ -1,10 +1,4 @@
---// Services
-local ReplicatedStorage = game:GetService("ReplicatedStorage")
-local UserInputService = game:GetService("UserInputService")
-
---// Packages
-local Packages = ReplicatedStorage.Packages
-local InputManager = require(Packages.InputManager)
+local InputManager = require(InputManager)
 
 --VerticlePositiveKeys = {Enum.KeyCode.W,Enum.KeyCode.DPadUp,Enum.KeyCode.Up,Enum.KeyCode.Thumbstick1,Enum.KeyCode.Thumbstick2,Enum.UserInputType.MouseMovement}
 VerticlePositiveKeys = {InputManager.Info.NewKey(Enum.KeyCode.W,1,Enum.Axis.Y),Enum.KeyCode.Thumbstick1,Enum.UserInputType.MouseButton1}

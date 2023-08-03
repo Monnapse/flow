@@ -1,3 +1,6 @@
+--[[
+    Made by Monnapse
+--]]
 --// Services
 local UserInputManager = game:GetService("UserInputService")
 
@@ -6,12 +9,26 @@ local assert = require(script.Parent.assert)
 local invert = require(script.Parent.invert)
 local triggers = require(script.Parent.triggers)
 
+--[=[
+    Where you action will be handled, this is the main function.
+
+    @client
+    @param Manager Action -- Your action holding your data
+    @within manager
+]=]
 function newManager(Manager)
     local self = {}
 
+    -- @interface Triggers
+    -- .Began Signal
+    -- .Ended Signal
+    -- .Changed Signal
     self.Triggers = {
+        -- @function Began
         Began = triggers.NewTrigger(),
+        -- @function Ended
         Ended = triggers.NewTrigger(),
+        -- @function Changed
         Changed = triggers.NewTrigger(),
     }
 

@@ -1,12 +1,16 @@
+--[[
+    Made by Monnapse
+--]]
+
 --// DataTypes
-type Key = {
+export type Key = {
     InputType: Enum.KeyCode | Enum.UserInputType, --// The Key Code
     Normal: number, --// 1 for Positive, -1 for Negative
     __type: string,
     Axis: Enum.Axis | nil --//
 }
 
-type Action = {
+export type Action = {
     Name: string,
     Keys: {Key},
     Invert: boolean,
@@ -15,17 +19,26 @@ type Action = {
     Axis: {Enum.Axis} | Enum.Axis | nil
 }
 
+--[=[
+    Where the types get made
+
+    @class info
+    @client
+]=]
 local info = {}
 info.__index = info
 
 --// Functions
 
---[[
+--[=[
     Create a Key
 
-    KeyCode: Enum.KeyCode (KeyCode)
-    Normal: number (1 for Positive, -1 for Negative)
---]]
+    @client
+    @param InputType Enum.KeyCode | Enum.UserInputType -- The input type
+    @param Normal number -- The number your keycode will be multiplied by, 1 or -1
+    @param Axis | nil -- Where your keycode axis will go on
+    @return Key
+]=]
 function info.NewKey(
     InputType: Enum.KeyCode | Enum.UserInputType,
     Normal: number,
@@ -42,14 +55,16 @@ function info.NewKey(
     return new
 end
 
---[[
+--[=[
     Create a input Action
 
-    Name: string (The name of the input Action)
-    Keys: {Button} (All of the buttons that will trigger the event)
-    Invert: boolean (Inverts the value)
-    Type: number (The returning value: 1 for Boolean, 2 for Number, 3 for Vector2)
---]]
+    @client
+    @param Name string -- The name of the input Action
+    @param Keys {Key} -- All of the buttons that will trigger the event
+    @param Invert boolean -- Inverts the value
+    @param Type number -- The returning value: 1 for Boolean, 2 for Number, 3 for Vector2
+    @return Action
+]=]
 function info.NewAction(
     Name: string,
     Keys: {Key},
