@@ -58,6 +58,9 @@ function NewManager.Manager(Manager): Manager
         Began = triggers.NewTrigger(),
         Ended = triggers.NewTrigger(),
         Changed = triggers.NewTrigger(),
+
+        Shared = triggers.NewTrigger(),
+        SharedEnded = triggers.NewTrigger(),
     }
 
     self.Value = nil
@@ -81,6 +84,7 @@ function NewManager.Manager(Manager): Manager
             --// Triggers
             if self.Triggers.Began.enabled then
                 self.Triggers.Began:Fire(Input)
+                self.Triggers.Shared:Fire(Input)
             end
         elseif UserInputState == Enum.UserInputState.End then
             if Manager.Type == 1 then
@@ -110,6 +114,7 @@ function NewManager.Manager(Manager): Manager
             --// Triggers
             if self.Triggers.Ended.enabled then
                 self.Triggers.Ended:Fire(Input)
+                self.Triggers.SharedEnded:Fire(Input)
             end
         elseif UserInputState == Enum.UserInputState.Change then
             if Manager.Type == 3 then
@@ -124,6 +129,7 @@ function NewManager.Manager(Manager): Manager
             --// Triggers
             if self.Triggers.Changed.enabled then
                 self.Triggers.Changed:Fire(Input)
+                self.Triggers.Shared:Fire(Input)
             end
         end
     end
