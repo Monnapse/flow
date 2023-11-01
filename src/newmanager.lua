@@ -84,6 +84,8 @@ function NewManager.Manager(Manager): Manager
             --// Triggers
             if self.Triggers.Began.enabled then
                 self.Triggers.Began:Fire(Input)
+            end
+            if self.Triggers.Shared.enabled then
                 self.Triggers.Shared:Fire(Input)
             end
         elseif UserInputState == Enum.UserInputState.End then
@@ -114,6 +116,8 @@ function NewManager.Manager(Manager): Manager
             --// Triggers
             if self.Triggers.Ended.enabled then
                 self.Triggers.Ended:Fire(Input)
+            end
+            if self.Triggers.SharedEnded.enabled then
                 self.Triggers.SharedEnded:Fire(Input)
             end
         elseif UserInputState == Enum.UserInputState.Change then
@@ -129,6 +133,8 @@ function NewManager.Manager(Manager): Manager
             --// Triggers
             if self.Triggers.Changed.enabled then
                 self.Triggers.Changed:Fire(Input)
+            end
+            if self.Triggers.Shared.enabled then
                 self.Triggers.Shared:Fire(Input)
             end
         end
