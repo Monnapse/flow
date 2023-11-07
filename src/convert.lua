@@ -28,7 +28,7 @@ convert.__index = convert
 function convert.TableToKeys(Table: {Enum.KeyCode}, Normal: number, Axis: Enum.Axis | nil): {info.Key}
     local ButtonTable = {}
 
-    for index, value in pairs(table) do
+    for index, value in pairs(Table) do
         table.insert(ButtonTable, info.NewKey(value, Normal, Axis))
     end
 
