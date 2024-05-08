@@ -1,3 +1,5 @@
+Updated version [Flow V2](https://github.com/Monnapse/Flow-V2)
+
 # Input Manager
 Handle your game controlls very easily. Combine keys and gamepads.
 
